@@ -1,6 +1,6 @@
 function Comments(){
     return (
-        <h1>Comments</h1>
+        <h1>Any comments you want to leave?</h1>
     )
 }
 

@@ -1,6 +1,6 @@
 function Feeling(){
     return (
-        <h1>Feeling</h1>
+        <h1>How are you feeling today?</h1>
     )
 }
 

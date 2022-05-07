@@ -1,6 +1,6 @@
 function Review(){
     return (
-        <h1>Review</h1>
+        <h1>Review your feedback</h1>
     )
 }
 

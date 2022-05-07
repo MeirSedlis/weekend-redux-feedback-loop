@@ -1,6 +1,6 @@
 function Understanding(){
     return (
-        <h1>Understanding</h1>
+        <h1>How well are you understanding the content?</h1>
     )
 }
 
