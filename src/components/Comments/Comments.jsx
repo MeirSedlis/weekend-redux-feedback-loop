@@ -5,7 +5,7 @@ function Comments(){
         <div>
             <h1>Any comments you want to leave?</h1>
             <label htmlFor="comments">Comments?</label>
-      <input type="text" name="comments" />
+      <input type="textarea" name="comments" />
             <Link to="/review"><button>NEXT</button></Link>
         </div>
     )
