@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import {useDispatch} from 'react-redux';
 
 function Understanding() {
   const [understanding, setUnderstanding] = useState(0);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const handleUnderstanding = () => {
     //dispatch the understanding to the store
+    dispatch({
+      type: 'SET_UNDERSTANDING',
+      payload: understanding
+    });
     history.push("/support");
   };
 

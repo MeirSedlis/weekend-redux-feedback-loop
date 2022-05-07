@@ -8,22 +8,33 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 const feelingReducer = (state = 0, action) => {
-    // TODO set feelings with data from server
+    if (action.type === 'SET_FEELINGS'){
+        return action.payload
+    }
     return state
 }
 
 const understandingReducer = (state = 0, action) => {
     // TODO set understanding with data from server?
+    if (action.type === 'SET_UNDERSTANDING'){
+        return action.payload
+    }
     return state
 }
 
 const supportReducer = (state = 0, action) => {
     // TODO set support with data from server?
+    if (action.type === 'SET_SUPPORT'){
+        return action.payload
+    }
     return state
 }
 
 const commentReducer = (state = '', action) => {
     //TODO set comments with data from server?
+    if (action.type === 'SET_COMMENT'){
+        return action.payload
+    }
     return state
 }
 

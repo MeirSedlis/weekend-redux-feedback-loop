@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 function Support() {
   const [support, setSupport] = useState(0);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const handleSupport = () => {
     //dispatch the support to the store
+    dispatch({
+      type: 'SET_SUPPORT',
+      payload: support
+    });
     history.push("/comments");
   };
   

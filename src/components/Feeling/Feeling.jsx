@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom'
+import {useDispatch} from 'react-redux'
 
 function Feeling() {
     const [feeling, setFeeling] = useState(0);
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const handleFeelings = () => {
         //dispatch the feeling to the store
+        dispatch({
+          type: 'SET_FEELINGS',
+          payload: feeling
+        });
         history.push('/understanding')
     }
 
