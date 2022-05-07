@@ -26,13 +26,13 @@ function App() {
         <Route exact path="/support">
           <Support />
         </Route>
-        <Route exact path="comments">
+        <Route exact path="/comments">
           <Comments />
         </Route>
-        <Route exact path="review">
+        <Route exact path="/review">
           <Review />
         </Route>
-        <Route exact path="thankYou">
+        <Route exact path="/thankYou">
           <ThankYou />
         </Route>
       </div>
