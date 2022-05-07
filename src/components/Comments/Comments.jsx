@@ -3,7 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 function Comments() {
-  const [comments, setComments] = useState(0);
+  const [comments, setComments] = useState('');
   const history = useHistory();
 
   const handleComments = () => {
