@@ -10,6 +10,7 @@ function Support() {
     //dispatch the support to the store
     history.push("/comments");
   };
+  
   return (
     <div>
       <h1>How well are you being supported?</h1>
