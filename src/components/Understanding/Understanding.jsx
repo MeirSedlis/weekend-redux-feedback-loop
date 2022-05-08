@@ -10,6 +10,13 @@ function Understanding() {
 
   const handleUnderstanding = () => {
     //dispatch the understanding to the store
+    if(understanding === ''){
+      alert('field cannot be blank, please enter a value')
+      return false
+    } else if (understanding < 0 || understanding > 5){
+      alert('please choose a number between 1 and 5')
+      return false
+    }
     dispatch({
       type: 'SET_UNDERSTANDING',
       payload: understanding
@@ -20,7 +27,7 @@ function Understanding() {
   return (
     <div>
       <h1>How well are you understanding the content?</h1>
-      <label htmlFor="understanding">Understanding?</label>
+      <label htmlFor="understanding">Please rate how well you are understanding the content on a scale of 1 (low) to 5 (high)</label>
       <input
         type="number"
         name="understanding"
