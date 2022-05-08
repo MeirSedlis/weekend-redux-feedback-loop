@@ -1,18 +1,34 @@
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 function Review() {
-  let feelings = useSelector((store) => store.feelingReducer);
+    const history = useHistory();
+    
+
+  let feeling = useSelector((store) => store.feelingReducer);
   let understanding = useSelector((store) => store.understandingReducer);
   let support = useSelector((store) => store.supportReducer);
   let comments = useSelector((store) => store.commentReducer);
+
+    const handleSubmit = () => {
+        let newSurvey = {feeling, understanding, support, comments};
+
+        axios({
+            method: "POST",
+            url: "/feedback",
+            data: newSurvey
+        })
+        history.push("/thankYou")
+    }
 
   return (
     <div>
       <h1>Review your feedback</h1>
 
       <h3>Feelings:</h3>
-        <p>{feelings}</p>
+        <p>{feeling}</p>
 
       <h3>Understanding:</h3>
         <p>{understanding}</p>
@@ -22,10 +38,9 @@ function Review() {
 
       <h3>Comments:</h3>
         <p>{comments}</p>
-        
-      <Link to="/thankYou">
-        <button>submit feedback</button>
-      </Link>
+
+        <button onClick={handleSubmit}>submit feedback</button>
+      
     </div>
   );
 }
